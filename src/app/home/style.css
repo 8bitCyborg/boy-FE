@@ -1,0 +1,45 @@
+.robot-logo {
+  color: #4169E1;
+  font-size: 10rem;
+  border: solid 1px #4169E1;
+  border-radius: 50%;
+  padding: 2rem;
+  cursor: pointer;
+  transition: 2s;
+}
+.robot-logo:hover {
+  color: #fff;
+  border: solid 1px #fff;
+  transition: 2s;
+}
+
+.contact-container {
+  min-width: 30vw;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+.contact-icon {
+  font-size: 2rem;
+  color: #4169E1;
+  transition: 1s;
+}
+.contact-icon:hover {
+  transform: translateY(-0.5rem);
+  color: #fff;
+  transition: 1s;
+}
+
+
+
+@media(max-width: 800px){
+  .hide_cover {
+    transform: translateX(85vw)
+  }
+  .contact-container {
+    min-width: 90vw;
+  }
+}
