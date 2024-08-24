@@ -1,14 +1,14 @@
 .robot-logo {
-  color: #4169E1;
+  color: #fff;
   font-size: 10rem;
-  border: solid 1px #4169E1;
+  border: solid 1px #fff;
   border-radius: 50%;
   padding: 2rem;
   cursor: pointer;
   transition: 2s;
 }
 .robot-logo:hover {
-  color: #fff;
+  color: #4169E1;
   border: solid 1px #fff;
   transition: 2s;
 }
@@ -24,12 +24,12 @@
 }
 .contact-icon {
   font-size: 2rem;
-  color: #4169E1;
+  color: #fff;
   transition: 1s;
 }
 .contact-icon:hover {
   transform: translateY(-0.5rem);
-  color: #fff;
+  color: #4169E1;
   transition: 1s;
 }
 
