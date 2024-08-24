@@ -22,8 +22,8 @@ const Home = () => {
           <a href="https://www.linkedin.com/in/shalom-junior-50661588/" target='_blank' className='contact-icon' ><FaLinkedinIn /></a>
           <a href="https://github.com/8bitCyborg" target='_blank' className='contact-icon'><FaGithub /></a>
           <a href="mailto:shalombjunior@gmail.com" target='_blank' className='contact-icon' ><BiLogoGmail /></a>
-          <a href="https://x.com/The_8bitCyborg" target='_blank' className='contact-icon' ><FaXTwitter /></a>
-          <a href="https://medium.com/@_shalomboy" target='_blank' className='contact-icon' ><FaMedium /></a>
+          <a href="https://x.com/_shalomboy" target='_blank' className='contact-icon' ><FaXTwitter /></a>
+          <a href="https://medium.com/@the_8bitCyborg" target='_blank' className='contact-icon' ><FaMedium /></a>
           <a href="https://api.whatsapp.com/send?1=pt_BR&phone=2348143842978" target='_blank' className='contact-icon'><FaWhatsapp /></a>
         </div>
       </div>
