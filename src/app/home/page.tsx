@@ -2,7 +2,7 @@ import 'animate.css';
 import './style.css';
 import { GiMonoWheelRobot } from "react-icons/gi";
 import { FaLinkedinIn, FaGithub, FaWhatsapp } from 'react-icons/fa';
-import { FaXTwitter } from "react-icons/fa6";
+import { FaXTwitter, FaMedium } from "react-icons/fa6";
 import { BiLogoGmail } from 'react-icons/bi';
 
 
@@ -23,6 +23,7 @@ const Home = () => {
           <a href="https://github.com/8bitCyborg" target='_blank' className='contact-icon'><FaGithub /></a>
           <a href="mailto:shalombjunior@gmail.com" target='_blank' className='contact-icon' ><BiLogoGmail /></a>
           <a href="https://x.com/The_8bitCyborg" target='_blank' className='contact-icon' ><FaXTwitter /></a>
+          <a href="https://medium.com/@_shalomboy" target='_blank' className='contact-icon' ><FaMedium /></a>
           <a href="https://api.whatsapp.com/send?1=pt_BR&phone=2348143842978" target='_blank' className='contact-icon'><FaWhatsapp /></a>
         </div>
       </div>
