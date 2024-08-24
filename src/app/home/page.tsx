@@ -1,14 +1,18 @@
 import 'animate.css';
+import './style.css';
 import { GiMonoWheelRobot } from "react-icons/gi";
 import { FaLinkedinIn, FaGithub, FaWhatsapp } from 'react-icons/fa';
 import { FaXTwitter } from "react-icons/fa6";
 import { BiLogoGmail } from 'react-icons/bi';
 
-import './style.css';
 
 const Home = () => {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
+      <div className='typewriter mt-[1.5em] fixed -top-3 right-3 flex justify-center items-end flex-col'>
+        <p className='qwitcher-grypen-regular text-2xl text-[#4169E1]'>the_8bitCyborg</p>
+        <span className='h-[0.1px] w-[80%] bg-[#4169E1] animate__animated animate animate__fadeInRight animate__delay-4s'></span>
+      </div>
       <div className='flex flex-col justify-center items-center'>
         <GiMonoWheelRobot className='
           robot-logo 
@@ -20,7 +24,7 @@ const Home = () => {
           <a href="mailto:shalombjunior@gmail.com" target='_blank' className='contact-icon' ><BiLogoGmail /></a>
           <a href="https://x.com/The_8bitCyborg" target='_blank' className='contact-icon' ><FaXTwitter /></a>
           <a href="https://api.whatsapp.com/send?1=pt_BR&phone=2348143842978" target='_blank' className='contact-icon'><FaWhatsapp /></a>
-          </div>
+        </div>
       </div>
     </main>
   );
