@@ -5,15 +5,18 @@ import { FaLinkedinIn, FaGithub, FaWhatsapp } from 'react-icons/fa';
 import { FaXTwitter, FaMedium } from "react-icons/fa6";
 import { BiLogoGmail } from 'react-icons/bi';
 
+import Meta from '../components/meta';
+import ScrollDownArrow from '../components/arrow-down';
 
 const Home = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
+    <main className="flex min-h-screen">
       <div className='typewriter mt-[1.5em] fixed -top-3 right-3 flex justify-center items-end flex-col cursor-pointer '>
         <p className='qwitcher-grypen-regular text-2xl text-white'>the_8bitCyborg</p>
         <span className='h-[0.1px] w-[80%] bg-white animate__animated animate animate__fadeInRight animate__delay-4s'></span>
       </div>
-      <div className='flex flex-col justify-center items-center'>
+
+      <div className='h-[100vh] w-[100vw] fixed border-white border-[0.1px] rounded-md flex flex-col items-center justify-center'>
         <GiMonoWheelRobot className='
           robot-logo 
           animate__animated animate__bounce animate__slower animate__infinite'
@@ -27,6 +30,10 @@ const Home = () => {
           <a href="https://api.whatsapp.com/send?1=pt_BR&phone=2348143842978" target='_blank' className='contact-icon'><FaWhatsapp /></a>
         </div>
       </div>
+
+      <ScrollDownArrow />
+
+      <Meta />
     </main>
   );
 };
