@@ -16,7 +16,7 @@ const Home = () => {
         <span className='h-[0.1px] w-[80%] bg-white animate__animated animate animate__fadeInRight animate__delay-4s'></span>
       </div>
 
-      <div className='h-[100vh] w-[100vw] fixed border-white border-[0.1px] rounded-md flex flex-col items-center justify-center'>
+      <div className='h-[100vh] w-[100vw] fixed flex flex-col items-center justify-center'>
         <GiMonoWheelRobot className='
           robot-logo 
           animate__animated animate__bounce animate__slower animate__infinite'
