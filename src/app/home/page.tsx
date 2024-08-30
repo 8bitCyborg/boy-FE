@@ -11,10 +11,10 @@ import ScrollDownArrow from '../components/arrow-down';
 const Home = () => {
   return (
     <main className="flex min-h-screen">
-      <div className='typewriter mt-[1.5em] fixed -top-3 right-3 flex justify-center items-end flex-col cursor-pointer z-50'>
+      <a href="#" className='typewriter mt-[1.5em] fixed -top-3 right-3 flex justify-center items-end flex-col cursor-pointer z-50'>
         <p className='qwitcher-grypen-regular text-2xl text-white'>the_8bitCyborg</p>
         <span className='h-[0.1px] w-[80%] bg-white animate__animated animate animate__fadeInRight animate__delay-4s'></span>
-      </div>
+      </a>
 
       <div className='h-[100vh] w-[100vw] fixed flex flex-col items-center justify-center'>
         <GiMonoWheelRobot className='
