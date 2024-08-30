@@ -18,7 +18,7 @@ const Meta = () => {
 
       <div className="w-[100vw] md:w-[60vw]">
         <div id="about" className="sticky top-0 h-[100vh] bg-black p-5">
-          <h3>About Me</h3>
+          <h3>Me</h3>
         </div>
 
         <div id="experience" className="sticky top-0 h-[100vh] bg-black p-5">
