@@ -72,11 +72,20 @@ const Meta = () => {
             </p>
 
             <p className="mt-5 text-left">
+              If the need arises, I can also have experience using Wordpress, both themed and headless.
+            </p>
+
+            <p className="mt-5 text-left">
               Outside of web and mobile app development,
               I have used Python and C++ and the corresponding libraries and frameworks for Data Analytics and Robotics respectively,
               although these were mostly for hobbyist projects and not in a professional capacity.
             </p>
-            
+
+            <p className="mt-5 text-left">
+              For version control, I use Git via Github and I am comfortable using the CLI, as well as Bash for scripting.<br/><br/>
+              I have minor devops experience implementing CI/CD pipelines via forge and envoger as well as manually deploying to digitalocean and integrating AWS S3 for storage.
+            </p>
+          
           </div>
         </div>
 
