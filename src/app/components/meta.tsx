@@ -24,7 +24,7 @@ const Meta = () => {
 
       <div className="w-[100vw] md:w-[60vw] bg-black">
         <div id="about" className="h-[100vh] p-5">
-          <div className="sticky top-1 p-1 py-2">
+          <div className="sticky top-0 p-1 py-2 w-full bg-black">
             <BsPersonBoundingBox className="text-md" />
           </div>
           <div className="flex flex-col justify-center items-end h-full p-1 md:p-10">
@@ -48,7 +48,7 @@ const Meta = () => {
         </div>
 
         <div id="experience" className="h-[100vh] p-5">
-          <div className="sticky top-1 p-1 py-2">
+          <div className="sticky top-0 p-1 py-2 w-full bg-black">
             <LiaUserClockSolid className="text-md" />
           </div>
           <div className="flex flex-col justify-center items-end h-full p-1 md:p-10">
@@ -62,7 +62,7 @@ const Meta = () => {
         </div>
 
         <div id="projects" className="h-[100vh] p-5">
-          <div className="sticky top-1 p-1 py-2">
+          <div className="sticky top-0 p-1 py-2 w-full bg-black">
             <BsBriefcase className="text-md" />
           </div>
           <div className="flex flex-col justify-center items-end h-full p-1 md:p-10">
