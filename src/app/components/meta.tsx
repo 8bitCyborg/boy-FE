@@ -36,8 +36,8 @@ const Meta = () => {
               I have great interpersonal skills and have proven to be a good communicator which means we will always be on the same page on your project. <br/><br/>
               Do you have a website, app or story you need to be built? <br/>
               Or maybe you already have one and need it maintained, fixed or revamped? <br/><br/>
-              You'll certainly make the best decision for you project by hiring me.<br/>
-              Reach out to me, let's work together, and you will be glad you did.
+              You will certainly make the best decision for you project by hiring me.<br/>
+              Reach out to me, let us work together, and you will be glad you did.
             </p>
             <div className="flex flex-row justify-between my-10 w-[50vw] md:w-[10vw] self-center md:self-end">
               <a href="https://www.linkedin.com/in/shalom-junior-50661588/" target='_blank' className="text-2xl"><FaLinkedinIn /></a>
@@ -55,7 +55,7 @@ const Meta = () => {
             <h3 className="sticky top-2">Experience</h3>
             <span className="h-[1px] w-10 ml-10 bg-white sticky top-8"></span>
             <p className="mt-10 text-center md:text-right">
-              I am a fullstack Web and Cross Platform Mobile App Developer with about three years of experience. I'm familiar with most of the relevant technologies in this field.
+              I am a fullstack Web and Cross Platform Mobile App Developer with about three years of experience. I am familiar with most of the relevant technologies in this field.
               I have great interpersonal skills as I have proven to be a good communicator who can work with and carry along both technical and  non-technical individuals in any project.
             </p>
           </div>
@@ -69,7 +69,7 @@ const Meta = () => {
             <h3 className="sticky top-2">Projects</h3>
             <span className="h-[1px] w-10 ml-10 bg-white sticky top-8"></span>
             <p className="mt-10 text-center md:text-right">
-              I am a fullstack Web and Cross Platform Mobile App Developer with about three years of experience. I'm familiar with most of the relevant technologies in this field.
+              I am a fullstack Web and Cross Platform Mobile App Developer with about three years of experience. I am familiar with most of the relevant technologies in this field.
             </p>
           </div>
         </div>
