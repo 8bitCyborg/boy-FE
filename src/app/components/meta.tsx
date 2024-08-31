@@ -55,30 +55,28 @@ const Meta = () => {
           <div className="flex flex-col justify-start items-end h-full p-1 md:p-10">
             <h3 className="sticky top-2">Experience</h3>
             <span className="h-[1px] w-10 ml-10 bg-white sticky top-8"></span>
-            <p className="mt-10 text-left">
+            <p className="mt-5 text-left">
               I am a fullstack Web and Cross Platform Mobile App Developer with about three years of experience.
             </p>
 
-            <p className="mt-10 text-left">
+            <p className="mt-5 text-left">
               I am familiar with most of the relevant web development technologies and continually strive to stay up-to-date with industry standards and best practices. <br/>
               I primarily work with Javascript, using React/React-Native/NextJS in tandem with HTML and CSS for frontend development.
             </p>
 
-            <p className="mt-10 text-left">
-              While I admittedly have preference for NestJS and MongoDB for backend development and database management, <br/>
-              I however also have experience with PHP and Laravel, as well as SQL as alternatives.
-            </p>
-
-            <p className="mt-10 text-left">
+            <p className="mt-5 text-left">
+              While I admittedly have preference for NestJS and MongoDB for backend development and database management,
+              I however also have experience with PHP and Laravel, as well as SQL as alternatives.<br/>
               I am familiar with both Redux Toolkit and the ContextAPI for statemanagement.<br/>
               I am also familiar with both REST and GraphQL for building APIs.
             </p>
 
-            <p className="mt-10 text-left">
+            <p className="mt-5 text-left">
               Outside of web and mobile app development,
               I have used Python and C++ and the corresponding libraries and frameworks for Data Analytics and Robotics respectively,
               although these were mostly for hobbyist projects and not in a professional capacity.
             </p>
+            
           </div>
         </div>
 
