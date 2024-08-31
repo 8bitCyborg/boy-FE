@@ -6,7 +6,7 @@ import { BiLogoGmail } from 'react-icons/bi';
 
 const Meta = () => {
   return(
-    <section className="min-h-[100vh] w-[100vw] mt-[100vh] bg-black opacity-95 flex flex-row">
+    <section className="min-h-[100vh] w-[100vw] mt-[100vh] bg-black z-50 flex flex-row">
       <div className="hidden md:flex flex-col justify-center items-center w-[40vw] h-[100vh] sticky top-0">
         <a href="#about" className="flex flex-row justify-center items-center">
           <p className="w-10 h-[1px] bg-white mr-2"></p>
@@ -30,7 +30,7 @@ const Meta = () => {
           <div className="flex flex-col justify-center items-end h-full p-1 md:p-10">
             <h3 className="sticky top-2">About Me</h3>
             <span className="h-[1px] w-10 ml-10 bg-white sticky top-8"></span>
-            <p className="mt-10 text-right md:text-left">
+            <p className="mt-10 text-left">
               I am a fullstack Web and Cross Platform Mobile App Developer as well as a writer. <br/>
               From software to stories, I can write for you and help you bring that idea you have, to life. <br/>
               I have great interpersonal skills and have proven to be a good communicator which means we will always be on the same page on your project. <br/><br/>
