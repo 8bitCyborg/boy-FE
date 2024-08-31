@@ -30,7 +30,7 @@ const Meta = () => {
           <div className="flex flex-col justify-center items-end h-full p-1 md:p-10">
             <h3 className="sticky top-2">About Me</h3>
             <span className="h-[1px] w-10 ml-10 bg-white sticky top-8"></span>
-            <p className="mt-10 md:text-right">
+            <p className="mt-10 text-right md:text-left">
               I am a fullstack Web and Cross Platform Mobile App Developer as well as a writer. <br/>
               From software to stories, I can write for you and help you bring that idea you have, to life. <br/>
               I have great interpersonal skills and have proven to be a good communicator which means we will always be on the same page on your project. <br/><br/>
@@ -39,7 +39,7 @@ const Meta = () => {
               You'll certainly make the best decision for you project by hiring me.<br/>
               Reach out to me, let's work together, and you will be glad you did.
             </p>
-            <div className="flex flex-row justify-between my-10 w-[50vw] self-center">
+            <div className="flex flex-row justify-between my-10 w-[50vw] md:w-[10vw] self-center md:self-end">
               <a href="https://www.linkedin.com/in/shalom-junior-50661588/" target='_blank' className="text-2xl"><FaLinkedinIn /></a>
               <a href="mailto:shalombjunior@gmail.com" target='_blank' className="text-2xl"><BiLogoGmail /></a>
               <a href="https://api.whatsapp.com/send?1=pt_BR&phone=2348143842978" target='_blank' className='text-2xl'><FaWhatsapp /></a>
