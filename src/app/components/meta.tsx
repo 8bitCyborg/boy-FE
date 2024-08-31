@@ -17,16 +17,25 @@ const Meta = () => {
       </div>
 
       <div className="w-[100vw] md:w-[60vw]">
-        <div id="about" className="sticky top-0 md:relative h-[100vh] bg-black p-5">
-          <h3>Me</h3>
+        <div id="about" className="h-[100vh] bg-black p-5">
+          <h3 className="sticky top-0">Me</h3>
+          <div className="flex justify-center items-center h-full">
+            I am a SWE...
+          </div>
         </div>
 
         <div id="experience" className="sticky top-0 md:relative h-[100vh] bg-black p-5">
-          <h3>Experience</h3>
+          <h3 className="sticky top-0">Experience</h3>
+          <div className="flex justify-center items-center h-full">
+            I have x years of experience...
+          </div>
         </div>
 
         <div id="projects" className="sticky top-0 md:relative h-[100vh] bg-black p-5">
-          <h3>Projects</h3>
+          <h3 className="sticky top-0">Projects</h3>
+          <div className="flex justify-center items-center h-full">
+            I have worked on...
+          </div>
         </div>
       </div>
 
