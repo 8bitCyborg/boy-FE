@@ -4,7 +4,7 @@ import Work from "./work";
 
 const Meta = () => {
   return(
-    <section className="min-h-[100vh] w-[100vw] mt-[100vh] bg-black z-50 flex flex-row">
+    <section className="min-h-[100vh] w-[100vw] mt-[100vh] bg-black z-40 flex flex-row">
       <div className="hidden md:flex flex-col justify-center items-center w-[40vw] h-[100vh] sticky top-0">
         <a href="#about" className="flex flex-row justify-center items-center">
           <p className="w-10 h-[1px] bg-white mr-2"></p>
