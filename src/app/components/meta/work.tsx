@@ -26,7 +26,8 @@ const Work = () => {
               keeping you closer to them and vice versa.
             </p>
             <div className="flex flex-row text-blue-400 mt-2 self-end">
-              <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">WordPress</p>
+              <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">React Native</p>
+              <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">Laravel</p>
             </div>
           </div>
         </div>
