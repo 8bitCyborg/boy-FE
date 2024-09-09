@@ -17,7 +17,7 @@ const Work = () => {
 
         <span className="visible md:hidden h-2 w-2 rounded-full bg-blue-500 mt-6 self-start"></span>
         <div className="min-h-[25vh] flex flex-col md:flex-row border-l-[1px] border-blue-500 md:border-l-0 md:mt-5 ml-[3.5px] pt-2 pb-4 pl-3 items-start">
-          <p className="text-sm capitalize text-blue-400 mb-2 md:w-[30%]">Jan - March 2021</p>
+          <p className="text-sm capitalize text-blue-400 mb-2 md:w-[30%]">Jan - Mar 2021</p>
           <div className="flex flex-col">
             <h4 className="text-md text-blue-300">ManageMyFlock</h4>
             <p className="text-sm my-1 text-blue-300">
