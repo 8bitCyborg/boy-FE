@@ -38,6 +38,8 @@ const Meta = () => {
           className="text-xl text-blue-400 my-3 cursor-pointer bg-blue-400 rounded-lg w-[15rem] h-8 text-center flex justify-center items-center">
           <p className="text-white text-[10px] text-center">View Resume</p>
         </a>
+        <p className='text-white text-center text-sm'> &copy; {new Date().getFullYear()} Shalom Junior. All rights reserved.</p>
+
       </div>
 
       <div className="w-[100vw] md:w-[60vw] bg-black">

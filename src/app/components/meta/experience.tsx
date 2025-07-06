@@ -11,20 +11,11 @@ const Experience = () => {
       <div className="flex flex-col justify-start items-end h-full p-1 md:p-10">
         <h3 className="sticky top-2">Experience</h3>
         <span className="h-[1px] w-10 ml-10 bg-white sticky top-8"></span>
-        {/* <p className="mt-5">
-          {"I'm a Full-Stack Web and Cross-Platform Mobile App Developer with around 4 years of professional experience."}<br/><br/>
-          {"I hold a B.Sc. in Computer Science from the University of Benin, Nigeria. My career began with an internship at Intelligent Campaign Hub, followed by a period of freelance development."}<br/><br/>
-          {"I later joined Guardian HR as a Webmaster and Tier 2 IT Support personnel, where I gained experience not only in development but also in customer support and business relations."}<br/><br/>
-          {"After that, I joined Uvact Technologies as a Full-Stack Developer, where I expanded my hands-on experience building modern digital solutions for web and mobile platforms."}<br/><br/>
-          {"Over time, I've become proficient in key web and mobile technologies while continuously staying updated with evolving industry standards and best practices. JavaScript is my primary language, though I’m also experienced with PHP and familiar with Python."}<br/><br/>
-          {"I work with frameworks and libraries such as React, React Native, NestJS, and MongoDB, as well as Laravel and SQL-based systems."}<br/>
-          {"I'm also comfortable using tools like Git, GitHub, and the command line, which are integral to my development workflow."}
-        </p>   */}
 
         <span className="visible md:hidden h-2 w-2 rounded-full bg-blue-500 mt-6 self-start"></span>
         <div className="
           min-h-[25vh] flex flex-col md:flex-row border-l-[1px] border-blue-500 md:border-l-0 md:mt-5 ml-[3.5px] pt-2 pb-4 pl-3 items-start
-          lg:hover:bg-black lg:hover:bg-blue-700 lg:hover:rounded-[10px]
+          lg:hover:bg-black lg:hover:bg-blue-700 lg:hover:rounded-[10px] lg:hover:py-3
           transition-all duration-300
         ">
           <div className="flex flex-col md:w-[30%]">
@@ -64,13 +55,15 @@ const Experience = () => {
               <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">React</p>
               <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">React Native</p>
               <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">Laravel</p>
-              <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">NestJS</p>
             </div>
             <div className="flex flex-row text-blue-400 mt-4 self-end">
-              <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">CI / CD</p>
-              <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">Jest</p>
+              <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">NestJS</p>
               <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">MongoDB</p>
               <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">MySQL</p>
+            </div>
+            <div className="flex flex-row text-blue-400 mt-4 self-end">
+              <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">Jest</p>
+              <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">CI / CD</p>
             </div>
           </div>
         </div>
@@ -78,7 +71,7 @@ const Experience = () => {
         <span className="visible md:hidden h-2 w-2 rounded-full bg-blue-500 mt-6 self-start"></span>
         <div className="
           min-h-[25vh] flex flex-col md:flex-row border-l-[1px] border-blue-500 md:border-l-0 md:mt-5 ml-[3.5px] pt-2 pb-4 pl-3 items-start
-          lg:hover:bg-black lg:hover:bg-blue-700 lg:hover:rounded-[10px]
+          lg:hover:bg-black lg:hover:bg-blue-700 lg:hover:rounded-[10px] lg:hover:py-3
           transition-all duration-300
         ">
           <div className="flex flex-col md:w-[30%]">
@@ -105,8 +98,11 @@ const Experience = () => {
             integrity across teams.</p>
 
             <div className="flex flex-row text-blue-400 mt-4 self-end">
-              <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">HTML & CSS</p>
+              <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">HTML</p>
+              <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">CSS</p>
               <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">Javascript</p>
+            </div>
+            <div className="flex flex-row text-blue-400 mt-4 self-end">
               <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">WordPress</p>
               <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">PHP</p>
             </div>
@@ -116,7 +112,7 @@ const Experience = () => {
         <span className="visible md:hidden h-2 w-2 rounded-full bg-blue-500 mt-6 self-start"></span>
         <div className="
            min-h-[25vh] flex flex-col md:flex-row border-l-[1px] border-blue-500 md:border-l-0 md:mt-5 ml-[3.5px] pt-2 pb-4 pl-3 items-start
-           lg:hover:bg-black lg:hover:bg-blue-700 lg:hover:rounded-[10px]
+           lg:hover:bg-black lg:hover:bg-blue-700 lg:hover:rounded-[10px] lg:hover:py-3
            transition-all duration-300
          ">
           <div className="flex flex-col md:w-[30%]">
@@ -132,12 +128,12 @@ const Experience = () => {
               {"Projects for brands like Divine Wisdom Schools, Savwal Enterprises, Anne's Wellness, DigitBull, and Mokh Data Inc. involved working closely with stakeholders to deliver performant, mobile-friendly solutions using HTML, CSS, JavaScript, and frameworks like React and WordPress, all while ensuring maintainability and cross-browser compatibility."}
             </p>
             <div className="flex flex-row text-blue-400 mt-4 self-end">
-              <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">HTML & CSS</p>
+              <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">HTML</p>
+              <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">CSS</p>
               <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">Javascript</p>
-              <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">Python</p>
-              <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">React</p>
             </div>
             <div className="flex flex-row text-blue-400 mt-4 self-end">
+              <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">React</p>
               <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">WordPress</p>
               <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">Laravel</p>
             </div>
@@ -147,7 +143,7 @@ const Experience = () => {
         <span className="visible md:hidden h-2 w-2 rounded-full bg-blue-500 mt-6 self-start"></span>
         <div className="
            min-h-[25vh] flex flex-col md:flex-row border-l-[1px] border-blue-500 md:border-l-0 md:mt-5 ml-[3.5px] pt-2 pb-4 pl-3 items-start
-           lg:hover:bg-black lg:hover:bg-blue-700 lg:hover:rounded-[10px]
+           lg:hover:bg-black lg:hover:bg-blue-700 lg:hover:rounded-[10px] lg:hover:py-3
            transition-all duration-300
          ">
           <div className="flex flex-col md:w-[30%]">
@@ -163,8 +159,12 @@ const Experience = () => {
             <span className="hidden lg:block text-blue-500 text-md bg-blue-500 w-5 h-0.5 rounded-full mt-5 mb-1"></span> 
             <p className="text-sm text-blue-300 mt-5 md:mt-0">Used Python and TensorFlow for machine learning and data processing to build an automated admission system as part of my final year Computer Science project.</p>
             <div className="flex flex-row text-blue-400 mt-4 self-end">
-              <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">HTML & CSS</p>
+              <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">HTML</p>
+              <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">CSS</p>
               <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">Javascript</p>
+            </div>
+            <div className="flex flex-row text-blue-400 mt-4 self-end">
+              <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">Python</p>
               <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">Tensorflow</p>
             </div>
           </div>

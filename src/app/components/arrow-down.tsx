@@ -16,11 +16,11 @@ const ScrollDownArrow = () => {
         <a href="#experience"><LiaUserClockSolid className="text-xl text-blue-400 my-3 cursor-pointer" /></a>
         <a href="#projects"><BsBriefcase className="text-xl text-blue-400 my-3 cursor-pointer" /></a>
         
-        <span className="hidden md:block h-[20vh] w-[1px] bg-blue-400"></span>
+        <span className="hidden md:block h-[20vh] w-[1px] bg-blue-400 ml-5"></span>
         
       </div>
       
-      <div className="fixed md:hidden left-1 bottom-0 w-full flex flex-row justify-between items-center z-50 bg-black">
+      <div className="fixed md:hidden bottom-0 w-full flex flex-row justify-between items-center z-50 bg-black">
         <div className="flex flex-row items-center justify-center gap-4 w-[60%]">
           <a 
             href="https://docs.google.com/document/d/12iKHqJsFuhEygVzjrYEoDnGxROF-O26ZvzUS4KZYTGQ/edit?usp=drive_link" 
