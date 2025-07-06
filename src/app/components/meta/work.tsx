@@ -9,10 +9,10 @@ const Work = () => {
       <div className="flex flex-col justify-center items-end h-full p-1 md:p-10">
         <h3 className="sticky top-2">Highlighted Work</h3>
         <span className="h-[1px] w-10 ml-10 bg-white sticky top-8"></span>
-        <p className="mt-10 text-left">
-          In my time at Intelligent Campaign Hub and Uvact Technologies as well as individually,
-          I have have been priviledged to work on a number of interesting projects, <br/> 
-          some of which are highlighted below.
+        <p className="mt-10 text-left w-full">
+          {"Over the course of my career, I've had the privilege of contributing to a range of projects."}<br/>
+          {"These include lightweight single-page applications as well as full-scale enterprise-level systems."}<br/><br/>
+          {"Some of these are highlighted below."}
         </p>
 
         <span className="visible md:hidden h-2 w-2 rounded-full bg-blue-500 mt-6 self-start"></span>
