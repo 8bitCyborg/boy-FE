@@ -7,7 +7,7 @@ const Work = () => {
         <BsBriefcase className="text-md" />
       </div>
       <div className="flex flex-col justify-center items-end h-full p-1 md:p-10">
-        <h3 className="sticky top-2">Highlighted Work</h3>
+        <h3 className="sticky top-0 bg-black w-full z-20 text-right">Highlighted Work</h3>
         <span className="h-[1px] w-10 ml-10 bg-white sticky top-8"></span>
         <p className="mt-10 text-left w-full">
           {"Over the course of my career, I've had the privilege of contributing to a range of projects."}<br/>
