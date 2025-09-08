@@ -24,6 +24,17 @@ const customStyles = `
       opacity: 0.8;
     }
   }
+  
+  @keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 `;
 
 // Inject the styles
@@ -78,7 +89,13 @@ async function refreshToken() {
 const Spotify = () => {
   const [loading, setLoading] = useState(true);
   const [currentlyPlayingItem, setCurrentlyPlayingItem] = useState<any>(null);
+  const [topTracks, setTopTracks] = useState<any>(null);
+  const [topArtists, setTopArtists] = useState<any>(null);
+  const [recentlyPlayed, setRecentlyPlayed] = useState<any>(null);
+  const [queue, setQueue] = useState<any>(null);
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const [showQueue, setShowQueue] = useState(false);
+  const [showRecentlyPlayed, setShowRecentlyPlayed] = useState(false);
 
   const getCurrentlyPlayingItem = async () => {
     const token = await refreshToken();
@@ -87,12 +104,65 @@ const Spotify = () => {
     });
     setLoading(false);
     setCurrentlyPlayingItem(response);
-    console.log('now playing', response);
     return response;
   };
 
+  const getRecentlyPlayed = async () => {
+    const token = await refreshToken();
+    const response = await apiClient.get("https://api.spotify.com/v1/me/player/recently-played?limit=5", {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    setRecentlyPlayed(response);
+    return response;
+  };
+
+  const getQueue = async () => {
+    const token = await refreshToken();
+    const response = await apiClient.get("https://api.spotify.com/v1/me/player/queue?limit=5", {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    console.log('queue', response);
+    setQueue(response);
+    return response;
+  };
+
+  const getTopTracks = async () => {
+    const token = await refreshToken();
+    const response = await apiClient.get("https://api.spotify.com/v1/me/top/tracks?limit=5", {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    console.log('top tracks', response);
+    setTopTracks(response);
+    return response;
+  };
+
+  const getTopArtists = async () => {
+    const token = await refreshToken();
+    const response = await apiClient.get("https://api.spotify.com/v1/me/top/artists?limit=5", {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    console.log('top artists', response);
+    setTopArtists(response);
+    return response;
+  };
+
+  // const getPlaylists = async () => {
+  //   const token = await refreshToken();
+  //   const response = await apiClient.get("https://api.spotify.com/v1/me/playlists", {
+  //     headers: { Authorization: `Bearer ${token}` },
+  //   });
+  //   console.log('playlists', response);
+  //   setPlaylists(response);
+  //   return response;
+  // };
+
   useEffect(() => {
     getCurrentlyPlayingItem();
+    getRecentlyPlayed();
+    getQueue();
+    // getTopTracks();
+    // getTopArtists();
+    // getPlaylists();
   }, []);
   
   return (
@@ -311,6 +381,34 @@ const Spotify = () => {
                   </svg>
                 )}
               </button>
+
+              {/* Queue Toggle */}
+              <button 
+                onClick={() => {
+                  setShowQueue(!showQueue);
+                  setShowRecentlyPlayed(false);
+                }}
+                className='p-1.5 sm:p-2 rounded-full transition-all duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-green-400/50'
+                title={showQueue ? 'Hide Queue' : 'Show Queue'}
+              >
+                <svg className={`w-4 h-4 sm:w-5 sm:h-5 transition-colors duration-200 ${showQueue ? 'text-green-400' : 'text-gray-500 hover:text-gray-300'}`} fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                  <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M4 6h16M4 10h16M4 14h16M4 18h16' />
+                </svg>
+              </button>
+
+              {/* Recently Played Toggle */}
+              <button 
+                onClick={() => {
+                  setShowRecentlyPlayed(!showRecentlyPlayed);
+                  setShowQueue(false);
+                }}
+                className='p-1.5 sm:p-2 rounded-full transition-all duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-green-400/50'
+                title={showRecentlyPlayed ? 'Hide Recently Played' : 'Show Recently Played'}
+              >
+                <svg className={`w-4 h-4 sm:w-5 sm:h-5 transition-colors duration-200 ${showRecentlyPlayed ? 'text-green-400' : 'text-gray-500 hover:text-gray-300'}`} fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                  <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' />
+                </svg>
+              </button>
             </div>
 
           </div>
@@ -330,6 +428,23 @@ const Spotify = () => {
           </div>
         )}
         
+        {/* Refresh Button - Top Right */}
+        {!isCollapsed && 
+          <button 
+            onClick={() => {
+              getCurrentlyPlayingItem();
+              getQueue();
+              getRecentlyPlayed();
+            }}
+            className='absolute top-2 right-2 p-1.5 sm:p-2 rounded-full transition-all duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-green-400/50 bg-black/50 backdrop-blur-sm'
+            title="Refresh"
+          >
+            <svg className='w-3 h-3 sm:w-4 sm:h-4 text-gray-400 hover:text-green-400 transition-colors duration-200' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+              <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15' />
+            </svg>
+          </button>
+        }
+
         {/* Toggle Button */}
         <button 
           onClick={() => setIsCollapsed(!isCollapsed)}
@@ -349,7 +464,193 @@ const Spotify = () => {
             <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M15 19l-7-7 7-7' />
           </svg>
         </button>
+
+        {(showQueue || showRecentlyPlayed) && 
+          <div className='bg-black/95 backdrop-blur-xl border border-green-500/30 rounded-bottom-xl shadow-2xl overflow-hidden z-10 max-h-80'>
+            {/* Dynamic Header */}
+            <div className='px-4 py-3 border-b border-gray-700/50 bg-gradient-to-r from-green-500/10 to-transparent'>
+              <div className='flex items-center justify-between'>
+                <h3 className='text-white font-semibold text-sm flex items-center space-x-2'>
+                  {showQueue ? (
+                    <>
+                      <svg className='w-4 h-4 text-green-400' fill='currentColor' viewBox='0 0 24 24'>
+                        <path d='M4 6h16M4 10h16M4 14h16M4 18h16' />
+                      </svg>
+                      <span>Up Next</span>
+                    </>
+                  ) : (
+                    <>
+                      <svg className='w-4 h-4 text-green-400' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                        <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' />
+                      </svg>
+                      <span>Recently Played</span>
+                    </>
+                  )}
+                </h3>
+                <span className='text-xs text-gray-400 bg-gray-700/50 px-2 py-1 rounded-full'>
+                  {showQueue ? (queue?.queue?.length || 0) : (recentlyPlayed?.items?.length || 0)} tracks
+                </span>
+              </div>
+            </div>
+            
+            {/* Dynamic Items */}
+            <div className='overflow-y-auto max-h-64 scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent'>
+              {showQueue ? (
+                // Queue Items
+                queue?.queue?.length > 0 ? (
+                  <div className='divide-y divide-gray-700/30'>
+                    {queue.queue.map((item: any, index: number) => (
+                      <div 
+                        key={index}
+                        className='group px-4 py-3 hover:bg-white/5 transition-all duration-200 cursor-pointer'
+                      >
+                        <div className='flex items-center space-x-3'>
+                          {/* Track Number */}
+                          <div className='flex-shrink-0 w-6 h-6 flex items-center justify-center'>
+                            <span className='text-xs text-gray-400 group-hover:text-green-400 transition-colors duration-200 font-medium'>
+                              {index + 1}
+                            </span>
+                          </div>
+                          
+                          {/* Album Artwork */}
+                          <div className='flex-shrink-0 relative'>
+                            <img 
+                              src={item.album.images[0]?.url} 
+                              alt={item.name} 
+                              className='w-10 h-10 rounded-lg object-cover shadow-lg group-hover:scale-105 transition-transform duration-200' 
+                            />
+                            <div className='absolute inset-0 rounded-lg bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200'></div>
+                          </div>
+                          
+                          {/* Track Info */}
+                          <div className='flex-1 min-w-0'>
+                            <h4 className='text-white text-sm font-medium truncate group-hover:text-green-400 transition-colors duration-200'>
+                              {item.name}
+                            </h4>
+                            <p className='text-gray-400 text-xs truncate mt-0.5'>
+                              {item.artists.map((artist: any) => artist.name).join(', ')}
+                            </p>
+                          </div>
+                          
+                          {/* Duration */}
+                          <div className='flex-shrink-0'>
+                            <span className='text-xs text-gray-500 group-hover:text-gray-300 transition-colors duration-200'>
+                              {Math.floor(item.duration_ms / 60000)}:{(item.duration_ms % 60000 / 1000).toFixed(0).padStart(2, '0')}
+                            </span>
+                          </div>
+                          
+                          {/* Play Button (appears on hover) */}
+                          <div className='flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200'>
+                            <button 
+                              onClick={() => {
+                                if (item.external_urls?.spotify) {
+                                  window.open(item.external_urls.spotify, '_blank', 'noopener,noreferrer');
+                                }
+                              }}
+                              className='p-1.5 rounded-full bg-green-500 hover:bg-green-400 transition-colors duration-200 shadow-lg'
+                              title="Open in Spotify"
+                            >
+                              <svg className='w-3 h-3 text-white ml-0.5' fill='currentColor' viewBox='0 0 24 24'>
+                                <path d='M8 5v14l11-7z' />
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className='px-4 py-8 text-center'>
+                    <div className='w-12 h-12 mx-auto mb-3 rounded-full bg-gray-700/50 flex items-center justify-center'>
+                      <svg className='w-6 h-6 text-gray-500' fill='currentColor' viewBox='0 0 24 24'>
+                        <path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z'/>
+                      </svg>
+                    </div>
+                    <p className='text-gray-400 text-sm'>No tracks in queue</p>
+                    <p className='text-gray-500 text-xs mt-1'>When the_8bitCyborg starts playing music, you can see his queue here</p>
+                  </div>
+                )
+              ) : (
+                // Recently Played Items
+                recentlyPlayed?.items?.length > 0 ? (
+                  <div className='divide-y divide-gray-700/30'>
+                    {recentlyPlayed.items.map((item: any, index: number) => (
+                      <div 
+                        key={index}
+                        className='group px-4 py-3 hover:bg-white/5 transition-all duration-200 cursor-pointer'
+                      >
+                        <div className='flex items-center space-x-3'>
+                          {/* Track Number */}
+                          <div className='flex-shrink-0 w-6 h-6 flex items-center justify-center'>
+                            <span className='text-xs text-gray-400 group-hover:text-green-400 transition-colors duration-200 font-medium'>
+                              {index + 1}
+                            </span>
+                          </div>
+                          
+                          {/* Album Artwork */}
+                          <div className='flex-shrink-0 relative'>
+                            <img 
+                              src={item.track.album.images[0]?.url} 
+                              alt={item.track.name} 
+                              className='w-10 h-10 rounded-lg object-cover shadow-lg group-hover:scale-105 transition-transform duration-200' 
+                            />
+                            <div className='absolute inset-0 rounded-lg bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200'></div>
+                          </div>
+                          
+                          {/* Track Info */}
+                          <div className='flex-1 min-w-0'>
+                            <h4 className='text-white text-sm font-medium truncate group-hover:text-green-400 transition-colors duration-200'>
+                              {item.track.name}
+                            </h4>
+                            <p className='text-gray-400 text-xs truncate mt-0.5'>
+                              {item.track.artists.map((artist: any) => artist.name).join(', ')}
+                            </p>
+                          </div>
+                          
+                          {/* Played At Time */}
+                          <div className='flex-shrink-0'>
+                            <span className='text-xs text-gray-500 group-hover:text-gray-300 transition-colors duration-200'>
+                              {new Date(item.played_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                            </span>
+                          </div>
+                          
+                          {/* Play Button (appears on hover) */}
+                          <div className='flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200'>
+                            <button 
+                              onClick={() => {
+                                if (item.track.external_urls?.spotify) {
+                                  window.open(item.track.external_urls.spotify, '_blank', 'noopener,noreferrer');
+                                }
+                              }}
+                              className='p-1.5 rounded-full bg-green-500 hover:bg-green-400 transition-colors duration-200 shadow-lg'
+                              title="Open in Spotify"
+                            >
+                              <svg className='w-3 h-3 text-white ml-0.5' fill='currentColor' viewBox='0 0 24 24'>
+                                <path d='M8 5v14l11-7z' />
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className='px-4 py-8 text-center'>
+                    <div className='w-12 h-12 mx-auto mb-3 rounded-full bg-gray-700/50 flex items-center justify-center'>
+                      <svg className='w-6 h-6 text-gray-500' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                        <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' />
+                      </svg>
+                    </div>
+                    <p className='text-gray-400 text-sm'>No recently played tracks</p>
+                    <p className='text-gray-500 text-xs mt-1'>Start playing music to see your recently played tracks here</p>
+                  </div>
+                )
+              )}
+            </div>
+          </div>
+        }
       </div>
+
     </div>
   );
 };
