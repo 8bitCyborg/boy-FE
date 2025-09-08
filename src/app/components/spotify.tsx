@@ -251,7 +251,7 @@ const Spotify = () => {
             <div className={`flex-1 min-w-0 transition-all duration-500 ease-in-out overflow-hidden ${
               isCollapsed ? 'max-w-0 opacity-0' : 'max-w-full opacity-100'
             }`}>
-              <div className='space-y-2'>
+              <div className=''>
                 {loading && (
                   <div className='space-y-3'>
                     <div className='h-4 bg-gray-700/50 rounded-lg animate-pulse'></div>
@@ -322,9 +322,8 @@ const Spotify = () => {
                         </h3>
                       )}
                     </div>
-                    
                     {/* Artist */}
-                    <p className='text-gray-300 text-xs sm:text-sm truncate'>
+                    <p className='text-gray-300 text-xs sm:text-sm truncate mb-2'>
                       {currentlyPlayingItem.item.artists?.map((artist: any) => artist.name).join(', ')}
                     </p>
                   </>
