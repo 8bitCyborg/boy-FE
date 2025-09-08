@@ -3,6 +3,36 @@
 import { useEffect, useState } from 'react';
 import { ApiClient } from '@/app/api/api';
 
+// Custom CSS for reverse bounce animation and pulsing indicator
+const customStyles = `
+  @keyframes bounce-reverse {
+    0%, 100% {
+      transform: translateY(4px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes pulse-indicator {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.8;
+    }
+  }
+`;
+
+// Inject the styles
+if (typeof document !== 'undefined') {
+  const styleSheet = document.createElement('style');
+  styleSheet.textContent = customStyles;
+  document.head.appendChild(styleSheet);
+}
+
 const apiClient = new ApiClient();
 
 const body = new URLSearchParams({
@@ -87,9 +117,18 @@ const Spotify = () => {
                 <div className='absolute -top-8 left-1/2 transform -translate-x-1/2 z-10'>
                   {currentlyPlayingItem.is_playing ? (
                     <div className='flex space-x-0.5'>
-                      <div className='w-0.5 h-2 bg-green-400 rounded-full animate-pulse'></div>
-                      <div className='w-0.5 h-3 bg-green-400 rounded-full animate-pulse' style={{animationDelay: '0.1s'}}></div>
-                      <div className='w-0.5 h-1.5 bg-green-400 rounded-full animate-pulse' style={{animationDelay: '0.2s'}}></div>
+                      <div className='w-0.5 h-2 bg-green-400 rounded-full' style={{
+                        animation: 'bounce-reverse 1.5s ease-in-out infinite',
+                        animationDelay: '0s'
+                      }}></div>
+                      <div className='w-0.5 h-3 bg-green-400 rounded-full' style={{
+                        animation: 'bounce-reverse 1.5s ease-in-out infinite',
+                        animationDelay: '0.3s'
+                      }}></div>
+                      <div className='w-0.5 h-1.5 bg-green-400 rounded-full' style={{
+                        animation: 'bounce-reverse 1.5s ease-in-out infinite',
+                        animationDelay: '0.6s'
+                      }}></div>
                     </div>
                   ) : (
                     <div className='w-2 h-2 bg-gray-400 rounded-full'></div>
@@ -130,8 +169,10 @@ const Spotify = () => {
               
               {/* Playing indicator */}
               {currentlyPlayingItem?.is_playing && !isCollapsed && (
-                <div className='absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full flex items-center justify-center animate-pulse'>
-                  <div className='w-2 h-2 bg-white rounded-full'></div>
+                <div className='absolute -bottom-1 -right-1 w-2 h-2 bg-green-500 rounded-full flex items-center justify-center' style={{
+                  animation: 'pulse-indicator 1.5s ease-in-out infinite'
+                }}>
+                  <div className='w-1 h-1 bg-white rounded-full'></div>
                 </div>
               )}
             </div>
@@ -156,9 +197,18 @@ const Spotify = () => {
                       {currentlyPlayingItem.is_playing ? (
                         <div className='flex items-center space-x-2'>
                           <div className='flex space-x-1'>
-                            <div className='w-1 h-3 bg-green-400 rounded-full animate-pulse'></div>
-                            <div className='w-1 h-4 bg-green-400 rounded-full animate-pulse' style={{animationDelay: '0.1s'}}></div>
-                            <div className='w-1 h-2 bg-green-400 rounded-full animate-pulse' style={{animationDelay: '0.2s'}}></div>
+                            <div className='w-1 h-2.5 bg-green-400 rounded-full' style={{
+                              animation: 'bounce-reverse 1s ease-out-in infinite',
+                              animationDelay: '0.9s'
+                            }}></div>
+                            <div className='w-1 h-3 bg-green-400 rounded-full' style={{
+                              animation: 'bounce-reverse 1s ease-in-out infinite',
+                              animationDelay: '0.2s'
+                            }}></div>
+                            <div className='w-1 h-2.5 bg-green-400 rounded-full' style={{
+                              animation: 'bounce-reverse 1s ease-in-out infinite',
+                              animationDelay: '0.4s'
+                            }}></div>
                           </div>
                           <span className='text-green-400 text-xs font-medium'>
                             Now playing{currentlyPlayingItem.device?.name ? ` on ${currentlyPlayingItem.device.name}` : ''}

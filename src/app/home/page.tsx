@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <main className="flex min-h-screen">
       <Spotify />
-      <p className='text-white text-center text-sm absolute top-4 md:hidden'> &copy; {new Date().getFullYear()}</p>
+      <p className='text-white text-center text-sm absolute top-12 right-4 md:hidden'> &copy; {new Date().getFullYear()}</p>
 
       <a href="#" className='typewriter mt-[1.5em] fixed -top-3 right-3 flex justify-center items-end flex-col cursor-pointer'>
         <p className='qwitcher-grypen-regular text-2xl text-white'>the_8bitCyborg</p>
