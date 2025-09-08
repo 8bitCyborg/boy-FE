@@ -336,7 +336,7 @@ const Spotify = () => {
               isCollapsed ? 'max-w-0 opacity-0' : 'max-w-full opacity-100 space-x-2 sm:space-x-3 md:space-x-4'
             }`}>
               {/* Shuffle */}
-              <span className='p-1.5 sm:p-2 rounded-full transition-all duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-green-400/50'>
+              <span className='p-1.5 sm:p-2 rounded-full transition-all duration-200 hover:bg-white/10 focus:outline-none'>
                 {currentlyPlayingItem?.shuffle_state && currentlyPlayingItem?.smart_shuffle && (
                   <div className='relative' title='Smart Shuffle'>
                     <svg className='w-4 h-4 sm:w-5 sm:h-5 text-green-400' fill='currentColor' viewBox='0 0 24 24'>
@@ -358,7 +358,7 @@ const Spotify = () => {
               </span>
 
               {/* Repeat */}
-              <span className='p-1.5 sm:p-2 rounded-full transition-all duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-green-400/50'>
+              <span className='p-1.5 sm:p-2 rounded-full transition-all duration-200 hover:bg-white/10 focus:outline-none'>
                 {currentlyPlayingItem?.repeat_state === 'track' && (
                   <div className='relative' title='Repeat Track'>
                     <svg className='w-4 h-4 sm:w-5 sm:h-5 text-green-400' fill='currentColor' viewBox='0 0 24 24'>
@@ -410,7 +410,7 @@ const Spotify = () => {
                    setShowQueue(!showQueue);
                    setShowRecentlyPlayed(false);
                  }}
-                 className='p-1.5 sm:p-2 rounded-full transition-all duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-green-400/50'
+                 className='p-1.5 sm:p-2 rounded-full transition-all duration-200 hover:bg-white/10 focus:outline-none'
                  title={showQueue ? 'Hide Queue' : 'Show Queue'}
                >
                  <svg className={`w-4 h-4 sm:w-5 sm:h-5 transition-colors duration-200 ${showQueue ? 'text-green-400' : 'text-gray-500 hover:text-gray-300'}`} fill='none' stroke='currentColor' viewBox='0 0 24 24'>
@@ -424,7 +424,7 @@ const Spotify = () => {
                    setShowRecentlyPlayed(!showRecentlyPlayed);
                    setShowQueue(false);
                  }}
-                 className='p-1.5 sm:p-2 rounded-full transition-all duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-green-400/50'
+                 className='p-1.5 sm:p-2 rounded-full transition-all duration-200 hover:bg-white/10 focus:outline-none'
                  title={showRecentlyPlayed ? 'Hide Recently Played' : 'Show Recently Played'}
                >
                  <svg className={`w-4 h-4 sm:w-5 sm:h-5 transition-colors duration-200 ${showRecentlyPlayed ? 'text-green-400' : 'text-gray-500 hover:text-gray-300'}`} fill='none' stroke='currentColor' viewBox='0 0 24 24'>
@@ -441,7 +441,7 @@ const Spotify = () => {
                      setShowRecentlyPlayed(false);
                    }
                  }}
-                 className='p-1.5 sm:p-2 rounded-full transition-all duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-green-400/50'
+                 className='p-1.5 sm:p-2 rounded-full transition-all duration-200 hover:bg-white/10 focus:outline-none'
                  title={isCollapsed ? 'Expand' : 'Collapse'}
                >
                  <svg 
@@ -483,7 +483,7 @@ const Spotify = () => {
               getQueue();
               getRecentlyPlayed();
             }}
-            className='absolute top-2 right-2 p-1.5 sm:p-2 rounded-full transition-all duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-green-400/50 bg-black/50 backdrop-blur-sm'
+            className='absolute top-2 right-2 p-1.5 sm:p-2 rounded-full transition-all duration-200 hover:bg-white/10 focus:outline-none bg-black/50 backdrop-blur-sm'
             title="Refresh"
           >
             <svg className='w-3 h-3 sm:w-4 sm:h-4 text-gray-400 hover:text-green-400 transition-colors duration-200' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
