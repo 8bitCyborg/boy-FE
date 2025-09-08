@@ -1,3 +1,6 @@
+'use client'
+
+import { useEffect, useState } from 'react';
 import 'animate.css';
 import './style.css';
 import { GiMonoWheelRobot } from "react-icons/gi";
@@ -6,11 +9,13 @@ import { FaXTwitter, FaMedium } from "react-icons/fa6";
 import { BiLogoGmail } from 'react-icons/bi';
 
 import Meta from '../components/meta';
+import Spotify from '../components/spotify';
 import ScrollDownArrow from '../components/arrow-down';
 
 const Home = () => {
   return (
     <main className="flex min-h-screen">
+      <Spotify />
       <p className='text-white text-center text-sm absolute top-4 md:hidden'> &copy; {new Date().getFullYear()}</p>
 
       <a href="#" className='typewriter mt-[1.5em] fixed -top-3 right-3 flex justify-center items-end flex-col cursor-pointer'>
