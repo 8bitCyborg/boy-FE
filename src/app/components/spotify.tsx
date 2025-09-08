@@ -184,7 +184,7 @@ const Spotify = () => {
             <div className='flex-shrink-0 relative group'>
               {/* Playing/Paused indicator - above album art when collapsed */}
               {isCollapsed && currentlyPlayingItem?.item && (
-                <div className='absolute -top-8 left-1/2 transform -translate-x-1/2 z-10'>
+                <div className='z-10 mb-4 flex justify-center'>
                   {currentlyPlayingItem.is_playing ? (
                     <div className='flex space-x-0.5'>
                       <div className='w-0.5 h-2 bg-green-400 rounded-full' style={{
@@ -281,14 +281,14 @@ const Spotify = () => {
                             }}></div>
                           </div>
                           <span className='text-green-400 text-xs font-medium'>
-                            Now playing{currentlyPlayingItem.device?.name ? ` on ${currentlyPlayingItem.device.name}` : ''}
+                            Now playing
                           </span>
                         </div>
                       ) : (
                         <div className='flex items-center space-x-2'>
                           <div className='w-2 h-2 bg-gray-400 rounded-full'></div>
                           <span className='text-gray-400 text-xs font-medium'>
-                            Paused{currentlyPlayingItem.device?.name ? ` on ${currentlyPlayingItem.device.name}` : ''}
+                            Paused
                           </span>
                         </div>
                       )}
@@ -332,12 +332,12 @@ const Spotify = () => {
               </div>
             </div>
 
-            {/* Controls */}
+            {/* Shuffle and Repeat Controls */}
             <div className={`flex-shrink-0 flex items-center transition-all duration-500 ease-in-out overflow-hidden ${
               isCollapsed ? 'max-w-0 opacity-0' : 'max-w-full opacity-100 space-x-2 sm:space-x-3 md:space-x-4'
             }`}>
               {/* Shuffle */}
-              <button className='p-1.5 sm:p-2 rounded-full transition-all duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-green-400/50'>
+              <span className='p-1.5 sm:p-2 rounded-full transition-all duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-green-400/50'>
                 {currentlyPlayingItem?.shuffle_state && currentlyPlayingItem?.smart_shuffle && (
                   <div className='relative' title='Smart Shuffle'>
                     <svg className='w-4 h-4 sm:w-5 sm:h-5 text-green-400' fill='currentColor' viewBox='0 0 24 24'>
@@ -346,20 +346,20 @@ const Spotify = () => {
                     <div className='absolute -top-1 -right-1 w-2 h-2 bg-green-400 rounded-full'></div>
                   </div>
                 )}
-                {currentlyPlayingItem?.shuffle_state && (
+                {/* {currentlyPlayingItem?.shuffle_state && (
                   <svg className='w-5 h-5 text-green-400' fill='currentColor' viewBox='0 0 24 24'>
                     <path d='M10.59 9.17L5.41 4 4 5.41l5.17 5.17 1.42-1.41zM14.5 4l2.04 2.04L4 18.59 5.41 20 17.96 7.46 20 9.5V4h-5.5zm.33 9.41l-1.41 1.41 3.13 3.13L14.5 20H20v-5.5l-2.04 2.04-3.13-3.13z'/>
                   </svg>
-                )}
+                )} */}
                 {!currentlyPlayingItem?.shuffle_state && (
                   <svg className='w-4 h-4 sm:w-5 sm:h-5 text-gray-500 hover:text-gray-300' fill='currentColor' viewBox='0 0 24 24'>
                     <path d='M10.59 9.17L5.41 4 4 5.41l5.17 5.17 1.42-1.41zM14.5 4l2.04 2.04L4 18.59 5.41 20 17.96 7.46 20 9.5V4h-5.5zm.33 9.41l-1.41 1.41 3.13 3.13L14.5 20H20v-5.5l-2.04 2.04-3.13-3.13z'/>
                   </svg>
                 )}
-              </button>
+              </span>
 
               {/* Repeat */}
-              <button className='p-1.5 sm:p-2 rounded-full transition-all duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-green-400/50'>
+              <span className='p-1.5 sm:p-2 rounded-full transition-all duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-green-400/50'>
                 {currentlyPlayingItem?.repeat_state === 'track' && (
                   <div className='relative' title='Repeat Track'>
                     <svg className='w-4 h-4 sm:w-5 sm:h-5 text-green-400' fill='currentColor' viewBox='0 0 24 24'>
@@ -380,38 +380,86 @@ const Spotify = () => {
                     <path d='M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z'/>
                   </svg>
                 )}
-              </button>
-
-              {/* Queue Toggle */}
-              <button 
-                onClick={() => {
-                  setShowQueue(!showQueue);
-                  setShowRecentlyPlayed(false);
-                }}
-                className='p-1.5 sm:p-2 rounded-full transition-all duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-green-400/50'
-                title={showQueue ? 'Hide Queue' : 'Show Queue'}
-              >
-                <svg className={`w-4 h-4 sm:w-5 sm:h-5 transition-colors duration-200 ${showQueue ? 'text-green-400' : 'text-gray-500 hover:text-gray-300'}`} fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                  <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M4 6h16M4 10h16M4 14h16M4 18h16' />
-                </svg>
-              </button>
-
-              {/* Recently Played Toggle */}
-              <button 
-                onClick={() => {
-                  setShowRecentlyPlayed(!showRecentlyPlayed);
-                  setShowQueue(false);
-                }}
-                className='p-1.5 sm:p-2 rounded-full transition-all duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-green-400/50'
-                title={showRecentlyPlayed ? 'Hide Recently Played' : 'Show Recently Played'}
-              >
-                <svg className={`w-4 h-4 sm:w-5 sm:h-5 transition-colors duration-200 ${showRecentlyPlayed ? 'text-green-400' : 'text-gray-500 hover:text-gray-300'}`} fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                  <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' />
-                </svg>
-              </button>
+              </span>
             </div>
 
           </div>
+
+           <div className={`flex items-center border-t border-gray-700/50 pt-2 ${
+             isCollapsed ? 'justify-center' : 'justify-between'
+           }`}>
+
+             {!isCollapsed && 
+               <div className='flex items-center space-x-2'>
+                 {currentlyPlayingItem?.device?.name && (
+                   <>
+                     <svg className='w-4 h-4 text-green-400' fill='currentColor' viewBox='0 0 24 24'>
+                       <path d='M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z'/>
+                     </svg>
+                     <p className='text-green-400 text-xs sm:text-sm truncate'>
+                       {currentlyPlayingItem?.device?.name}
+                     </p>
+                   </>
+                 )}
+               </div>
+             }
+
+             <div className='flex items-center space-x-2'>
+               {/* Queue Toggle */}
+               {!isCollapsed && <button 
+                 onClick={() => {
+                   setShowQueue(!showQueue);
+                   setShowRecentlyPlayed(false);
+                 }}
+                 className='p-1.5 sm:p-2 rounded-full transition-all duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-green-400/50'
+                 title={showQueue ? 'Hide Queue' : 'Show Queue'}
+               >
+                 <svg className={`w-4 h-4 sm:w-5 sm:h-5 transition-colors duration-200 ${showQueue ? 'text-green-400' : 'text-gray-500 hover:text-gray-300'}`} fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                   <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M4 6h16M4 10h16M4 14h16M4 18h16' />
+                 </svg>
+               </button>}
+
+               {/* Recently Played Toggle */}
+               {!isCollapsed && <button 
+                 onClick={() => {
+                   setShowRecentlyPlayed(!showRecentlyPlayed);
+                   setShowQueue(false);
+                 }}
+                 className='p-1.5 sm:p-2 rounded-full transition-all duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-green-400/50'
+                 title={showRecentlyPlayed ? 'Hide Recently Played' : 'Show Recently Played'}
+               >
+                 <svg className={`w-4 h-4 sm:w-5 sm:h-5 transition-colors duration-200 ${showRecentlyPlayed ? 'text-green-400' : 'text-gray-500 hover:text-gray-300'}`} fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                   <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' />
+                 </svg>
+               </button>}
+
+               {/* Collapse Toggle */}
+               <button 
+                 onClick={() => {
+                   setIsCollapsed(!isCollapsed);
+                   if (!isCollapsed) {
+                     setShowQueue(false);
+                     setShowRecentlyPlayed(false);
+                   }
+                 }}
+                 className='p-1.5 sm:p-2 rounded-full transition-all duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-green-400/50'
+                 title={isCollapsed ? 'Expand' : 'Collapse'}
+               >
+                 <svg 
+                   className={`w-4 h-4 sm:w-5 sm:h-5 text-gray-400 hover:text-white transition-all duration-300 ${
+                     isCollapsed ? 'rotate-180' : ''
+                   }`} 
+                   fill='none' 
+                   stroke='currentColor' 
+                   viewBox='0 0 24 24'
+                 >
+                   <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M15 19l-7-7 7-7' />
+                 </svg>
+               </button>
+             </div>
+
+           </div>
+
         </div>
         
         {/* Progress bar */}
@@ -445,25 +493,6 @@ const Spotify = () => {
           </button>
         }
 
-        {/* Toggle Button */}
-        <button 
-          onClick={() => setIsCollapsed(!isCollapsed)}
-          className={`absolute p-1.5 sm:p-2 rounded-full transition-all duration-200 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-green-400/50 bg-black/50 backdrop-blur-sm ${
-            isCollapsed ? 'bottom-2 left-1/2 transform -translate-x-1/2' : 'bottom-2 right-2'
-          }`}
-          title={isCollapsed ? 'Expand' : 'Collapse'}
-        >
-          <svg 
-            className={`w-3 h-3 sm:w-4 sm:h-4 text-gray-400 hover:text-white transition-all duration-300 ${
-              isCollapsed ? 'rotate-180' : ''
-            }`} 
-            fill='none' 
-            stroke='currentColor' 
-            viewBox='0 0 24 24'
-          >
-            <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M15 19l-7-7 7-7' />
-          </svg>
-        </button>
 
         {(showQueue || showRecentlyPlayed) && 
           <div className='bg-black/95 backdrop-blur-xl border border-green-500/30 rounded-bottom-xl shadow-2xl overflow-hidden z-10 max-h-80'>
