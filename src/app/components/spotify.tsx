@@ -261,7 +261,7 @@ const Spotify = () => {
                 )}
                 
                 {currentlyPlayingItem?.item && (
-                  <>
+                  <div className='space-y-1'>
                     {/* Status indicator */}
                     <div className='flex items-center space-x-2'>
                       {currentlyPlayingItem.is_playing ? (
@@ -326,7 +326,7 @@ const Spotify = () => {
                     <p className='text-gray-300 text-xs sm:text-sm truncate mb-2'>
                       {currentlyPlayingItem.item.artists?.map((artist: any) => artist.name).join(', ')}
                     </p>
-                  </>
+                  </div>
                 )}
               </div>
             </div>
