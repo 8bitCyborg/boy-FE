@@ -121,7 +121,6 @@ const Spotify = () => {
     const response = await apiClient.get("https://api.spotify.com/v1/me/player/queue?limit=5", {
       headers: { Authorization: `Bearer ${token}` },
     });
-    console.log('queue', response);
     setQueue(response);
     return response;
   };
