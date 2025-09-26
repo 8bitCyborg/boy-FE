@@ -109,7 +109,7 @@ const Spotify = () => {
 
   const getRecentlyPlayed = async () => {
     const token = await refreshToken();
-    const response = await apiClient.get("https://api.spotify.com/v1/me/player/recently-played?limit=5", {
+    const response = await apiClient.get("https://api.spotify.com/v1/me/player/recently-played", {
       headers: { Authorization: `Bearer ${token}` },
     });
     setRecentlyPlayed(response);
@@ -118,7 +118,7 @@ const Spotify = () => {
 
   const getQueue = async () => {
     const token = await refreshToken();
-    const response = await apiClient.get("https://api.spotify.com/v1/me/player/queue?limit=5", {
+    const response = await apiClient.get("https://api.spotify.com/v1/me/player/queue", {
       headers: { Authorization: `Bearer ${token}` },
     });
     setQueue(response);
