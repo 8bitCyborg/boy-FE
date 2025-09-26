@@ -31,7 +31,7 @@ const Experience = () => {
             <span className="hidden lg:block text-blue-500 text-md bg-blue-500 w-5 h-0.5 rounded-full mt-5 mb-1"></span> 
             <p className="text-sm text-blue-300 mt-5 md:mt-0">Hosted on Netlify and configured to point to custom domain on Namecheap.</p>
             <span className="hidden lg:block text-blue-500 text-md bg-blue-500 w-5 h-0.5 rounded-full mt-5 mb-1"></span>
-            <p className="text-sm text-blue-300 mt-5 md:mt-0">Set up netlify's CI/CD pipeline with github to auto deploy local changes to production.</p>
+            <p className="text-sm text-blue-300 mt-5 md:mt-0">Set up netlify&apos;s CI/CD pipeline with github to auto deploy local changes to production.</p>
             <span className="hidden lg:block text-blue-500 text-md bg-blue-500 w-5 h-0.5 rounded-full mt-5 mb-1"></span>
             <p className="text-sm text-blue-300 mt-5 md:mt-0">Integrated with the Spotify API to display my currently playing song, recently played song and queued songs.</p>
             <span className="hidden lg:block text-blue-500 text-md bg-blue-500 w-5 h-0.5 rounded-full mt-5 mb-1"></span>
