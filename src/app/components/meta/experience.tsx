@@ -17,6 +17,39 @@ const Experience = () => {
           min-h-[25vh] flex flex-col md:flex-row border-l-[1px] border-blue-500 md:border-l-0 md:mt-5 ml-[3.5px] pt-2 pb-4 pl-3 items-start
           lg:hover:bg-black lg:hover:bg-blue-700 lg:hover:rounded-[10px] lg:hover:py-3
           transition-all duration-300
+          w-full
+        ">
+          <div className="flex flex-col md:w-[30%]">
+            <p className="text-lg capitalize text-blue-400">Web Developer</p>
+            <a href="https://shalomboy.com" target="_blank" className="text-md text-blue-300">ShalomBoy<BsArrowUpRight className="inline-block ml-2 text-[15px]" /></a>
+            <p className="text-[12px] capitalize text-blue-400 mb-2">Remote | Nigeria</p>
+            <p className="text-sm capitalize text-blue-400 mb-2">May 2025 - Present</p>
+          </div>
+          <div className="flex flex-col md:w-[70%]">
+            <span className="hidden lg:block text-blue-500 text-md bg-blue-500 w-5 h-0.5 rounded-full mb-1"></span> 
+            <p className="text-sm text-blue-300 mt-5 md:mt-0">Developing and maintaining a personal website for myself.</p>
+            <span className="hidden lg:block text-blue-500 text-md bg-blue-500 w-5 h-0.5 rounded-full mt-5 mb-1"></span> 
+            <p className="text-sm text-blue-300 mt-5 md:mt-0">Hosted on Netlify and configured to point to custom domain on Namecheap.</p>
+            <span className="hidden lg:block text-blue-500 text-md bg-blue-500 w-5 h-0.5 rounded-full mt-5 mb-1"></span>
+            <p className="text-sm text-blue-300 mt-5 md:mt-0">Set up netlify's CI/CD pipeline with github to auto deploy local changes to production.</p>
+            <span className="hidden lg:block text-blue-500 text-md bg-blue-500 w-5 h-0.5 rounded-full mt-5 mb-1"></span>
+            <p className="text-sm text-blue-300 mt-5 md:mt-0">Integrated with the Spotify API to display my currently playing song, recently played song and queued songs.</p>
+            <span className="hidden lg:block text-blue-500 text-md bg-blue-500 w-5 h-0.5 rounded-full mt-5 mb-1"></span>
+            <p className="text-sm text-blue-300 mt-5 md:mt-0">Integrating with medium...</p>
+           
+            <div className="flex flex-row text-blue-400 mt-4 self-end">
+              <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">NextJS</p>
+              <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">Netlify</p>
+              <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">Spotify</p>
+            </div>
+          </div>
+        </div>
+
+        <span className="visible md:hidden h-2 w-2 rounded-full bg-blue-500 mt-6 self-start"></span>
+        <div className="
+          min-h-[25vh] flex flex-col md:flex-row border-l-[1px] border-blue-500 md:border-l-0 md:mt-5 ml-[3.5px] pt-2 pb-4 pl-3 items-start
+          lg:hover:bg-black lg:hover:bg-blue-700 lg:hover:rounded-[10px] lg:hover:py-3
+          transition-all duration-300
         ">
           <div className="flex flex-col md:w-[30%]">
             <p className="text-lg capitalize text-blue-400">Senior FullStack Web/Mobile Developer</p>
@@ -36,6 +69,8 @@ const Experience = () => {
               trust.
             </p>
             <span className="hidden lg:block text-blue-500 text-md bg-blue-500 w-5 h-0.5 rounded-full mt-5 mb-1"></span> 
+            <p className="text-sm text-blue-300 mt-5 md:mt-0">Implemented security measures on the application and server layers such as encryption, IP restrictions, idempotency, and rate limiting to enhance platform security and reliability.</p>
+            <span className="hidden lg:block text-blue-500 text-md bg-blue-500 w-5 h-0.5 rounded-full mt-5 mb-1"></span> 
             <p className="text-sm text-blue-300 mt-5 md:mt-0">Led DevOps efforts and implemented CI/CD pipelines, oversaw staging/production environments and managed DigitalOcean servers.</p>
             <span className="hidden lg:block text-blue-500 text-md bg-blue-500 w-5 h-0.5 rounded-full mt-5 mb-1"></span> 
             <p className="text-sm text-blue-300 mt-5 md:mt-0">Upgraded React Native versions from 0.71 to 0.75 while maintaining app stability and performance.</p>
@@ -50,6 +85,8 @@ const Experience = () => {
             <p className="text-sm text-blue-300 mt-5 md:mt-0">{"Debugged and resolved a recurring timeout issue on the Baff App's production server,implementing temporary stopgaps during investigation before ultimately restoring system stability and improving response times."}</p>
             <span className="hidden lg:block text-blue-500 text-md bg-blue-500 w-5 h-0.5 rounded-full mt-5 mb-1"></span> 
             <p className="text-sm text-blue-300 mt-5 md:mt-0">As part of the upgrading process, I migrated the MillticketCasting platform from a wordpress database schema to a new custom database schema with zero data loss.</p>
+            <span className="hidden lg:block text-blue-500 text-md bg-blue-500 w-5 h-0.5 rounded-full mt-5 mb-1"></span> 
+            <p className="text-sm text-blue-300 mt-5 md:mt-0">Et Cetera...</p>
 
             <div className="flex flex-row text-blue-400 mt-4 self-end">
               <p className="bg-blue-500 text-white text-sm px-4 py-1 mr-2 rounded-2xl">React</p>
